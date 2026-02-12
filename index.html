@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Bahruz Mammadly | Creative Developer</title>
+    <title>Bahruz Mammadly | .dev()</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg: #0b0c10;
-            --accent: #64ffda; /* Teal accent from 17966 */
-            --purple: #7d5fff; /* Purple accent from 17963 */
-            --text-main: #e6f1ff;
+            --bg-color: #0b0c10;
+            --accent-teal: #64ffda;
+            --accent-purple: #7d5fff;
+            --text-main: #ffffff;
             --text-dim: #8892b0;
-            --glass: rgba(255, 255, 255, 0.05);
-            --glow: 0 0 15px rgba(255, 255, 255, 0.2);
+            --nav-glass: rgba(20, 20, 25, 0.85);
+            --glow-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
         }
 
         * {
@@ -27,13 +27,258 @@
         }
 
         body {
-            background-color: var(--bg);
+            background-color: var(--bg-color);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
+        /* Top Navigation - .is() style */
+        .top-header {
+            width: 100%;
+            padding: 25px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            background: linear-gradient(to bottom, var(--bg-color), transparent);
+        }
+
+        .logo-main {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            color: var(--accent-purple);
+            font-weight: 500;
+        }
+
+        .top-nav {
+            display: flex;
+            gap: 12px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: var(--text-dim);
+            transition: 0.3s;
+        }
+
+        .top-nav a:hover { color: var(--accent-teal); }
+
+        /* Hero Content - Bahruz Mammadly.dev() */
+        .hero {
+            padding: 120px 25px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hi-label {
+            color: var(--accent-teal);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 10vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: var(--accent-teal);
+            font-family: 'Fira Code', monospace;
+            font-weight: 400;
+        }
+
+        .hero-desc {
+            color: var(--text-dim);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* Branding Circle */
+        .brand-sphere {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            margin: 40px auto 60px;
+            background: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .spin-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: rotateOnce 25s linear infinite;
+        }
+
+        @keyframes rotateOnce {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .initials {
+            font-size: 4.5rem;
+            font-weight: 300;
+            letter-spacing: -5px;
+            color: #fff;
+            z-index: 2;
+        }
+
+        .wave-svg {
+            position: absolute;
+            bottom: 30px;
+            width: 65%;
+            opacity: 0.3;
+        }
+
+        /* Action Buttons */
+        .btn-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 0 10px;
+            margin-bottom: 140px;
+        }
+
+        .btn-glow {
+            background: #121317;
+            color: #fff;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: var(--glow-shadow);
+            transition: 0.3s;
+        }
+
+        .btn-glow:active {
+            transform: scale(0.97);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.35);
+        }
+
+        /* Bottom Floating Bar */
+        .floating-pill {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--nav-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-around;
+            width: 90%;
+            max-width: 400px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .pill-icon {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            text-decoration: none;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .pill-icon.active {
+            background: #fff;
+            color: #000;
+        }
+
+        @media (min-width: 600px) {
+            .btn-stack { flex-direction: row; justify-content: center; }
+            .btn-glow { min-width: 180px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="logo-main">bahruz.is()</div>
+        <nav class="top-nav">
+            <a href="https://github.com/bahruzmammadly" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/bahruzmammadly" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:bahruzmammadly@gmail.com"><i class="fas fa-envelope"></i></a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <span class="hi-label">Hi, my name is</span>
+        <h1>Bahruz Mammadly<span>.dev()</span></h1>
+        <p class="hero-desc">
+            I build things for the web. <br>
+            Creative Developer & Tech Enthusiast based in Azerbaijan.
+        </p>
+
+        <div class="brand-sphere">
+            <svg class="spin-text" viewBox="0 0 100 100">
+                <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+                <text font-family="'Fira Code', monospace" font-size="5.2" fill="#8892b0" letter-spacing="3.5">
+                    <textPath href="#circle">
+                        BAHRUZ MAMMADLY • FRONT-END DEVELOPER • 
+                    </textPath>
+                </text>
+            </svg>
+            <div class="initials">BM</div>
+            <svg class="wave-svg" viewBox="0 0 100 20">
+                <path d="M0 10 Q25 0 50 10 T100 10" fill="none" stroke="white" stroke-width="0.3" opacity="0.4" />
+            </svg>
+        </div>
+
+        <div class="btn-stack">
+            <a href="#" class="btn-glow">Download CV</a>
+            <a href="mailto:bahruzmammadly@gmail.com" class="btn-glow">Contact Me</a>
+        </div>
+    </main>
+
+    <nav class="floating-pill">
+        <a href="#" class="pill-icon active"><i class="fas fa-home"></i></a>
+        <a href="https://github.com/bahruzmammadly" target="_blank" class="pill-icon"><i class="fas fa-desktop"></i></a>
+        <a href="#" class="pill-icon"><i class="fas fa-heart"></i></a>
+        <a href="https://linkedin.com/in/bahruzmammadly" target="_blank" class="pill-icon"><i class="fas fa-user"></i></a>
+        <a href="#" class="pill-icon"><i class="fas fa-graduation-cap"></i></a>
+        <a href="mailto:bahruzmammadly@gmail.com" class="pill-icon"><i class="fas fa-comment-dots"></i></a>
+    </nav>
+
+    <script>
+        // İkonlar arası keçid animasiyası
+        const icons = document.querySelectorAll('.pill-icon');
+        icons.forEach(icon => {
+            icon.addEventListener('click', function() {
+                icons.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
         /* Top Navigation - .is() style */
         header {
             width: 100%;
