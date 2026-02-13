@@ -1,3 +1,6 @@
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 import type { Metadata, Viewport } from 'next'
 import { JetBrains_Mono, Inter } from 'next/font/google'
 
@@ -43,6 +46,8 @@ export default function RootLayout({
         className={`${_inter.variable} ${_jetbrainsMono.variable} font-mono antialiased overflow-hidden`}
       >
         {children}
+        <Analytics />
+        <SpeedInsights/>
       </body>
     </html>
   )
