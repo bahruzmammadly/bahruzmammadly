@@ -1,36 +1,36 @@
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import type { Metadata, Viewport } from 'next'
-import { JetBrains_Mono, Inter } from 'next/font/google'
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata, Viewport } from "next";
+import { JetBrains_Mono, Inter } from "next/font/google";
 
-import './globals.css'
+import "./globals.css";
 
 const _inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 const _jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
-})
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+});
 
 export const metadata: Metadata = {
-  title: 'Bahruz Mammadly - Front End & Mobile Developer',
+  title: "Bahruz Mammadly - Front End & Mobile Developer",
   description:
-    'Bahruz Mammadly - Front End & Mobile Developer crafting modern digital experiences. View portfolio and connect on LinkedIn and GitHub.',
-}
+    "Bahruz Mammadly - Front End & Mobile Developer crafting modern digital experiences. View portfolio and connect on LinkedIn and GitHub.",
+};
 
 export const viewport: Viewport = {
-  themeColor: '#1a1e2e',
-  width: 'device-width',
+  themeColor: "#1a1e2e",
+  width: "device-width",
   initialScale: 1,
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -46,8 +46,8 @@ export default function RootLayout({
       >
         {children}
         <Analytics />
-        <SpeedInsights/>
+        <SpeedInsights />
       </body>
     </html>
-  )
+  );
 }
