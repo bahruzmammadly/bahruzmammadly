@@ -40,11 +40,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom horizontal line */}
-      <div
-        className="absolute bottom-16 left-0 right-0 h-px bg-border/20 md:bottom-12"
-        aria-hidden="true"
-      />
-    </section>
+   </section>
   );
 }
