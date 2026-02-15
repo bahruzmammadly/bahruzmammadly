@@ -5,6 +5,7 @@ import { useState } from "react";
 const navLinks = [
   { label: ".is()", href: "#hero" },
   { label: ".about()", href: "#hero" },
+  // Əgər boş olsun istəsən: const navLinks = [];
 ];
 
 export function Header() {
