@@ -7,6 +7,7 @@ const navLinks = [
   //{ label: ".about()", href: "#hero" },
 ];
 
+/* Bluesky ikonu şərhə alındı
 const BlueSkyIcon = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -18,6 +19,7 @@ const BlueSkyIcon = ({ className }: { className?: string }) => (
     <path d="M135.72 44.03C202.216 93.951 273.74 195.17 300 249.49c26.262-54.316 97.782-155.54 164.28-205.46C512.26 8.009 590-19.862 590 68.825c0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.38-3.69-10.832-3.708-7.896-.017-2.936-1.193.516-3.707 7.896-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.45-163.25-81.433C20.15 217.613 10 86.535 10 68.825c0-88.687 77.742-60.816 125.72-24.795z" />
   </svg>
 );
+*/
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -58,7 +60,9 @@ export function Header() {
           >
             <i className="fa-brands fa-linkedin text-base" aria-hidden="true" />
           </a>
-          <a
+          
+          {/* Bluesky Desktop linki şərhə alındı */}
+          {/* <a
             href="https://bahruzmammadly.bsky.app/profile/bahruzmammadly.bsky.social"
             target="_blank"
             rel="noopener noreferrer"
@@ -66,7 +70,9 @@ export function Header() {
             className="text-muted-foreground transition-colors hover:text-primary"
           >
             <BlueSkyIcon className="h-4 w-4" />
-          </a>
+          </a> 
+          */}
+
           <a
             href="https://github.com/bahruzmammadly"
             target="_blank"
@@ -160,7 +166,9 @@ export function Header() {
             >
               <i className="fa-brands fa-linkedin text-3xl leading-none" aria-hidden="true" />
             </a>
-            <a
+
+            {/* Bluesky Mobile linki şərhə alındı */}
+            {/* <a
               href="https://bahruzmammadly.bsky.app/profile/bahruzmammadly.bsky.social"
               target="_blank"
               rel="noopener noreferrer"
@@ -170,7 +178,9 @@ export function Header() {
               tabIndex={menuOpen ? 0 : -1}
             >
               <BlueSkyIcon className="h-8 w-8" />
-            </a>
+            </a> 
+            */}
+
             <a
               href="https://github.com/bahruzmammadly"
               target="_blank"
@@ -187,4 +197,4 @@ export function Header() {
       </div>
     </header>
   );
-            }
+}
